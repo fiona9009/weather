@@ -6,10 +6,7 @@ function getWeather() {
         return;
     }
 
-    console.log('city:', city);
-
     const urlGeo = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
-    console.log('urlGeo:', urlGeo);
 
     fetch(urlGeo)
         .then(response => {
@@ -22,13 +19,7 @@ function getWeather() {
             // Get the longitude and latitude of the first result (assuming it's the most relevant)
             const longitude = data.results[0].longitude;
             const latitude = data.results[0].latitude;
-
-            console.log('Longitude:', longitude);
-            console.log('Latitude:', latitude);
-           
             const currentWeatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,precipitation,rain,showers,snowfall,cloud_cover,wind_speed_10m&&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch`;
-            
-            console.log('currentWeatherUrl:', currentWeatherUrl);
 
             fetch(currentWeatherUrl)
                 .then(response => {
@@ -51,8 +42,6 @@ function getWeather() {
 }
 
 function displayWeather(data) {
-    console.log('Data:', data);
-
     const cityName = document.getElementById('city').value;
     const temperature = data.current.temperature_2m;
     const rain = 'RAIN:     ' + data.current.rain + ' inch';
@@ -60,8 +49,6 @@ function displayWeather(data) {
     const snow = 'SNOW:     ' + data.current.snowfall + ' inch';
     const cloudCover = 'CLOUD COVER:    ' + data.current.cloud_cover + ' %';
     const currentWindSpeed = 'WIND SPEED 10m:   ' + data.current.wind_speed_10m + ' mph';
-
-
     const cityNameHTML = `<p>${cityName}</p>`;
     const temperatureHTML = `<p>${temperature}°F</p>`;
     const conditionHTML = `
@@ -80,7 +67,7 @@ function displayWeather(data) {
     tempInfo.innerHTML = temperatureHTML;
     conditionInfo.innerHTML = conditionHTML;
     hideConditions();
-    //Clear textbox after search
+    // Clear textbox after search
     document.getElementById('city').value = '';
 }
 
