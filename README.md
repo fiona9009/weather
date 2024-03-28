@@ -22,7 +22,7 @@ Weather is a simple application designed to retrieve current weather information
 **Setup Instructions:**
 1. Clone this repository to your local machine.
 2. Open the index.html file in your web browser.
-3. Enter the name of the city and click "Search" to get the current temperature.
+3. Enter the name of the city and click "Search" to get the current temperature. e.g. San Jose, New York
 4. Click "View Conditions" to see detailed weather information.
 
 **Acknowledgements:**
