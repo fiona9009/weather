@@ -1,0 +1,78 @@
+body {
+    background: #52ceff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#weather-container {
+    background: rgba(255, 255, 255, 0.8);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+#result {
+    margin: 20px 0;
+}
+
+.active {
+    color: blue;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+h2, label, p {
+    color: #fff;
+    margin: 8px 0;
+}
+
+input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+button {
+    background: #7dceed;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #8cd3ee;
+}
+
+#city-div {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#city-div > p {
+    color: rgb(249, 5, 212);
+}
+
+#temp-info p {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#condition-info {
+    font-size: 20px;
+    margin-top: 10px;
+}
